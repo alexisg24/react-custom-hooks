@@ -5,10 +5,10 @@ const useForm = (initialForm = {}) => {
 
   const onInputChange = ({ target }) => {
     const { name, value } = target
-    setFormState({
-      ...formState,
+    setFormState(prev =>({
+      ...prev,
       [name]: value
-    })
+    }))
   }
 
   const onResetForm = () => {
